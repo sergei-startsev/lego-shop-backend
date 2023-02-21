@@ -21,12 +21,13 @@ The project code base is mainly located within the `src` folder. This folder is 
 - `types` - containing TypeScript types used by lambdas
 
 ```
-.
+product-service
 ├── src
 │   ├── functions               # Lambda configuration and source code folder
-│   │   ├── foo
-│   │   │   ├── handler.ts      # `Foo` lambda source code
-│   │   │   ├── index.ts        # `Foo` lambda Serverless configuration
+│   │   ├── functionName
+│   │   │   ├── handler.ts      # `functionName` lambda source code
+│   │   │   ├── handler.spec.ts # `functionName` lambda unit tests
+│   │   │   ├── index.ts        # `functionName` lambda Serverless configuration
 │   │   │
 │   │   └── index.ts            # Import/export of all lambda configurations
 │   │
@@ -35,7 +36,7 @@ The project code base is mainly located within the `src` folder. This folder is 
 │       └── handlerResolver.ts  # Sharable library for resolving lambda handlers
 │       └── lambda.ts           # Lambda middleware
 │
-│   └── types                    # Lambda TS types
+│   └── types                   # Lambda TS types
 │
 ├── package.json
 ├── serverless.ts               # Serverless service file
