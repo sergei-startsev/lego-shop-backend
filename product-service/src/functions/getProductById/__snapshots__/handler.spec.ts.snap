@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getProductById should return 404 status code 1`] = `
+{
+  "body": ""Product not found"",
+  "statusCode": 404,
+}
+`;
+
+exports[`getProductById should return 500 status code 1`] = `
+{
+  "body": ""Product ID not specified"",
+  "statusCode": 500,
+}
+`;
+
+exports[`getProductById should return product by id 1`] = `
+{
+  "body": "{"description":"This 2-in-1 model comes with a buildable pallet to lift, so kids can role-play different construction site adventures","id":"42133","price":50,"title":"Telehandler","count":25}",
+  "statusCode": 200,
+}
+`;

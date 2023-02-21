@@ -1,0 +1,44 @@
+[
+  {
+    "description": "A great introduction to engineering",
+    "id": "42147",
+    "price": 45,
+    "title": "Dump Truck",
+    "count": 10
+  },
+  {
+    "description": "This 2-in-1 model comes with a buildable pallet to lift, so kids can role-play different construction site adventures",
+    "id": "42133",
+    "price": 50,
+    "title": "Telehandler",
+    "count": 25
+  },
+  {
+    "description": "Give kids aged 10 and up a cool building challenge with this model airplane toy set",
+    "id": "42152",
+    "price": 530,
+    "title": "Firefighter Aircraft",
+    "count": 5
+  },
+  {
+    "description": "Inspire the next generation of pilots with the Race Plane from LEGO® Technic",
+    "id": "42117",
+    "price": 40,
+    "title": "Racing Plane",
+    "count": 15
+  },
+  {
+    "description": "Kids can role-play snowy adventures with a 2-in-1 Snow Groomer building set that rebuilds into a Snowmobile",
+    "id": "42148",
+    "price": 47,
+    "title": "Snow Groomer",
+    "count": 20
+  },
+  {
+    "description": "Give kids twice the fun with this 2-in-1 LEGO® Technic Motorbike model that rebuilds into a cool Adventure Bike",
+    "id": "42132",
+    "price": 43,
+    "title": "Motorcycle",
+    "count": 30
+  }
+]
