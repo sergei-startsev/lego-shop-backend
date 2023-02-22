@@ -14,6 +14,9 @@ const serverlessConfiguration: AWS = {
     region: 'eu-central-1',
     memorySize: 512,
     timeout: 10,
+    httpApi: {
+      cors: true
+    },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000'
