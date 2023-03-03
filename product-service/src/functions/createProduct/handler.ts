@@ -17,8 +17,8 @@ const createProduct: Handler = async event => {
   const schema = z.object({
     title: z.string(),
     description: z.string(),
-    price: z.number(),
-    count: z.number()
+    price: z.number().positive(),
+    count: z.number().nonnegative()
   });
 
   const parsed = schema.safeParse(event.body);
