@@ -11,12 +11,15 @@ export default {
           // response with description and response body
           200: {
             description: 'Product object',
-            bodyType: 'Product',
+            bodyType: 'Product'
+          },
+          400: {
+            description: 'Invalid request'
           },
           404: {
-            description: 'Product not found',
+            description: 'Product not found'
           },
-          500: 'Product ID not specified',
+          500: 'Internal Server Error'
         }
       }
     }

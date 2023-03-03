@@ -1,11 +1,8 @@
-import type { APIGatewayProxyResultV2, Handler } from 'aws-lambda';
 import type { JsonValue } from '@customTypes/json-value';
 
-export type ValidatedEventAPIGatewayProxyEvent<S> = Handler<S, APIGatewayProxyResultV2>;
-
-export const formatJSONResponse = (response: JsonValue, statusCode = 200) => {
+export const serializeResponse = (response: JsonValue) => {
   return {
-    statusCode,
+    statusCode: 200,
     body: JSON.stringify(response)
   };
 };

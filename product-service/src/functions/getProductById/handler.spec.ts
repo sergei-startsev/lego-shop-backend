@@ -1,7 +1,7 @@
 import { Context } from 'aws-lambda';
-import { main, ValidatedAPIGatewayProxyEvent } from './handler';
+import { main } from './handler';
 
-const buildEvent = id => ({
+const buildEvent = (id: string) => ({
   version: '2.0',
   routeKey: 'GET /products/{id}',
   rawPath: `/products/${id}`,
@@ -35,19 +35,19 @@ const buildEvent = id => ({
 describe('getProductById', () => {
   it('should return product by id', async () => {
     const event = buildEvent('42133');
-    const res = await main(event as ValidatedAPIGatewayProxyEvent, {} as Context, () => {});
+    const res = await main(event, {} as Context, () => {});
     expect(res).toMatchSnapshot();
   });
 
   it('should return 404 status code', async () => {
     const event = buildEvent('11111');
-    const res = await main(event as ValidatedAPIGatewayProxyEvent, {} as Context, () => {});
+    const res = await main(event, {} as Context, () => {});
     expect(res).toMatchSnapshot();
   });
 
   it('should return 500 status code', async () => {
     const event = buildEvent('');
-    const res = await main(event as ValidatedAPIGatewayProxyEvent, {} as Context, () => {});
+    const res = await main(event, {} as Context, () => {});
     expect(res).toMatchSnapshot();
   });
 });

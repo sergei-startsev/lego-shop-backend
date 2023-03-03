@@ -1,10 +1,17 @@
 import type { AWS } from '@serverless/typescript';
+import * as dotenv from 'dotenv';
 
 import getProductsList from '@functions/getProductsList';
 import getProductById from '@functions/getProductById';
+import createProduct from '@functions/createProduct';
+
+const env = dotenv.config().parsed;
+if (!env) {
+  throw Error('env is not specified');
+}
 
 const serverlessConfiguration: AWS = {
-  service: 'lego-shop-backend-app',
+  service: 'lego-shop-backend-app-task-4',
   frameworkVersion: '3',
   plugins: ['serverless-esbuild', 'serverless-auto-swagger'],
   provider: {
@@ -17,12 +24,57 @@ const serverlessConfiguration: AWS = {
     httpApi: {
       cors: true
     },
-    environment: {
-      AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
-      NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000'
+    iam: {
+      role: {
+        statements: [
+          {
+            Effect: 'Allow',
+            Action: 'dynamodb:*',
+            Resource: [
+              'arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.PRODUCTS_TABLE_NAME}',
+              'arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.STOCK_TABLE_NAME}'
+            ]
+          }
+        ]
+      }
+    },
+    environment: env
+  },
+  functions: { getProductsList, getProductById, createProduct },
+  resources: {
+    Resources: {
+      LegoShopProductsDB: {
+        Type: 'AWS::DynamoDB::Table',
+        Properties: {
+          TableName: env.PRODUCTS_TABLE_NAME,
+          AttributeDefinitions: [
+            { AttributeName: 'id', AttributeType: 'S' },
+            { AttributeName: 'title', AttributeType: 'S' }
+          ],
+          KeySchema: [
+            { AttributeName: 'id', KeyType: 'HASH' },
+            { AttributeName: 'title', KeyType: 'RANGE' }
+          ],
+          ProvisionedThroughput: {
+            ReadCapacityUnits: 1,
+            WriteCapacityUnits: 1
+          }
+        }
+      },
+      LegoShopStockDB: {
+        Type: 'AWS::DynamoDB::Table',
+        Properties: {
+          TableName: env.STOCK_TABLE_NAME,
+          AttributeDefinitions: [{ AttributeName: 'product_id', AttributeType: 'S' }],
+          KeySchema: [{ AttributeName: 'product_id', KeyType: 'HASH' }],
+          ProvisionedThroughput: {
+            ReadCapacityUnits: 1,
+            WriteCapacityUnits: 1
+          }
+        }
+      }
     }
   },
-  functions: { getProductsList, getProductById },
   package: { individually: true },
   custom: {
     esbuild: {
