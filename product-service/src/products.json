@@ -1,44 +1,38 @@
 [
   {
     "description": "A great introduction to engineering",
-    "id": "42147",
+    "id": "bf84a529-a610-4f4f-a327-c1e2de9b7739",
     "price": 45,
-    "title": "Dump Truck",
-    "count": 10
+    "title": "Dump Truck"
   },
   {
     "description": "This 2-in-1 model comes with a buildable pallet to lift, so kids can role-play different construction site adventures",
-    "id": "42133",
+    "id": "5ad07a30-4f60-4207-9c3f-9228d75f23d5",
     "price": 50,
-    "title": "Telehandler",
-    "count": 25
+    "title": "Telehandler"
   },
   {
     "description": "Give kids aged 10 and up a cool building challenge with this model airplane toy set",
-    "id": "42152",
+    "id": "4a79364d-98b7-401c-a440-090a2254df03",
     "price": 530,
-    "title": "Firefighter Aircraft",
-    "count": 5
+    "title": "Firefighter Aircraft"
   },
   {
     "description": "Inspire the next generation of pilots with the Race Plane from LEGO® Technic",
-    "id": "42117",
+    "id": "8fc6faa0-77fb-44bd-8a27-5199ba019c06",
     "price": 40,
-    "title": "Racing Plane",
-    "count": 15
+    "title": "Racing Plane"
   },
   {
     "description": "Kids can role-play snowy adventures with a 2-in-1 Snow Groomer building set that rebuilds into a Snowmobile",
-    "id": "42148",
+    "id": "0612330c-e444-4f72-9bdf-6781ea7b506a",
     "price": 47,
-    "title": "Snow Groomer",
-    "count": 20
+    "title": "Snow Groomer"
   },
   {
     "description": "Give kids twice the fun with this 2-in-1 LEGO® Technic Motorbike model that rebuilds into a cool Adventure Bike",
-    "id": "42132",
+    "id": "bb9df833-5526-435a-add8-0d0e5fbc6bca",
     "price": 43,
-    "title": "Motorcycle",
-    "count": 30
+    "title": "Motorcycle"
   }
 ]

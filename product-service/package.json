@@ -4,24 +4,36 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint ./src",
     "prettier": "prettier  --write .",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "sls deploy",
+    "populate": "ts-node src/populate-db"
   },
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.279.0",
+    "@aws-sdk/lib-dynamodb": "^3.279.0",
     "@middy/core": "^3.4.0",
-    "@middy/http-json-body-parser": "^3.4.0"
+    "@middy/http-error-handler": "^4.2.6",
+    "@middy/http-json-body-parser": "^4.2.6",
+    "dotenv": "^16.0.3",
+    "http-errors": "^2.0.0",
+    "pino": "^8.11.0",
+    "uuid": "^9.0.0",
+    "zod": "^3.20.6"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.0",
     "@serverless/typescript": "^3.0.0",
     "@types/aws-lambda": "^8.10.71",
+    "@types/http-errors": "^2.0.1",
     "@types/jest": "^29.4.0",
     "@types/node": "^14.14.25",
+    "@types/uuid": "^9.0.1",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "esbuild": "^0.14.11",
