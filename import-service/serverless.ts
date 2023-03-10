@@ -12,7 +12,7 @@ if (!env) {
 const serverlessConfiguration: AWS = {
   service: 'lego-shop-backend-app-task-5',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild'],
+  plugins: ['serverless-esbuild', 'serverless-auto-swagger'],
   provider: {
     name: 'aws',
     runtime: 'nodejs18.x',
