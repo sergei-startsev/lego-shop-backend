@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`importProductsFile should return 400 status code if name param does not match the schema 1`] = `
+{
+  "body": "[
+  {
+    "code": "too_small",
+    "minimum": 3,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "String must contain at least 3 character(s)",
+    "path": [
+      "name"
+    ]
+  }
+]",
+  "headers": {
+    "Content-Type": "application/json",
+  },
+  "statusCode": 400,
+}
+`;
+
+exports[`importProductsFile should return 400 status code if name param is not provided 1`] = `
+{
+  "body": "[
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "name"
+    ],
+    "message": "Required"
+  }
+]",
+  "headers": {
+    "Content-Type": "application/json",
+  },
+  "statusCode": 400,
+}
+`;
+
+exports[`importProductsFile should return the signed url 1`] = `
+{
+  "body": "{"url":"https://test-url.com"}",
+  "statusCode": 200,
+}
+`;
